@@ -96,7 +96,8 @@ export const authConfig: NextAuthOptions = {
           name: token.name
         }
       }
-    },
+    }
+    
     
     
   }

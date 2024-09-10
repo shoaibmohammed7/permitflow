@@ -147,7 +147,7 @@ export function Signin() {
             <Separator className="my-4 bg-black"/>
             <button
               onClick={async () => {
-              const result = await signIn("google");
+              const result = await signIn("google",{ callbackUrl: 'https://permitflow-q2q6cku0h-shoaibmohammed7s-projects.vercel.app/api/auth/callback/google'});
 
               if (result?.ok) {
               // If the sign-in is successful, redirect to the dashboard
