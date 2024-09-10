@@ -310,14 +310,18 @@ export  function Dashboard() {
                   <div className="space-y-4">
                   <div className="flex items-center">
                       <Avatar className="h-8 w-8 mr-2">
-                        <AvatarImage src="/images/Opt.jpg" />
-                        <AvatarFallback>JD</AvatarFallback>
+                        <AvatarImage src="" />
+                        <AvatarFallback>{session?.user.username
+          ? session.user.username.charAt(0).toUpperCase()
+          : session?.user.name
+          ? session.user.name.charAt(0).toUpperCase()
+          : "?"}</AvatarFallback>
                       </Avatar>
                       <span className="text-sm font-medium text-cyan-800 dark:text-cyan-200">{session?.user.name || session?.user.username} (Client)</span>
                     </div>
                     <div className="flex items-center">
                       <Avatar className="h-8 w-8 mr-2">
-                        <AvatarImage src="" />
+                        <AvatarImage src="/images/Opt.jpg" />
                         <AvatarFallback>RG</AvatarFallback>
                       </Avatar>
                       <span className="text-sm font-medium text-cyan-800 dark:text-cyan-200">Roger (Architect)</span>
