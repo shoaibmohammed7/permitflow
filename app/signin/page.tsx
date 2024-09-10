@@ -2,7 +2,7 @@
 import { Signin } from "@/components/signin";
 
 
-export default function(){
+export default function SigninPage(){
     return <div>
         <Signin></Signin>
         

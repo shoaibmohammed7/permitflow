@@ -142,7 +142,7 @@ export function Landingpage() {
             </div>
           </div>
           <p className="mt-4 text-muted-foreground">
-            "PermitFlow has been a game-changer for my construction business. The platform makes the permitting process so much easier and more efficient."
+          &quot;PermitFlow has been a game-changer for my construction business. The platform makes the permitting process so much easier and more efficient.&quot;
           </p>
         </CardContent>
       </Card>
@@ -160,7 +160,7 @@ export function Landingpage() {
             </div>
           </div>
           <p className="mt-4 text-muted-foreground">
-            "I love how PermitFlow keeps all my project documents organized and accessible. It's made my life so much easier."
+          &quot;I love how PermitFlow keeps all my project documents organized and accessible. It&apos;s made my life so much easier.&quot;
           </p>
         </CardContent>
       </Card>
@@ -178,7 +178,7 @@ export function Landingpage() {
             </div>
           </div>
           <p className="mt-4 text-muted-foreground">
-            "PermitFlow automated notifications and compliance tracking have saved me so much time and hassle. I highly recommend it."
+          &quot;PermitFlow automated notifications and compliance tracking have saved me so much time and hassle. I highly recommend it.&quot;
           </p>
         </CardContent>
       </Card>

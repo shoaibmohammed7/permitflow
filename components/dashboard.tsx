@@ -1,7 +1,5 @@
 "use client"
 
-import { authConfig } from "@/lib/auth";
-import { getServerSession } from "next-auth";
 import React, { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,7 +7,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,10 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { BarChart3, ClipboardList, FileText, Home, LogOut, Moon, Search, Settings, Sun, User } from "lucide-react"
-import { SessionLogin } from "./sessionlogin";
 import { signOut, useSession } from "next-auth/react";
-
-
 
 
 
@@ -162,7 +156,7 @@ export  function Dashboard() {
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 dark:bg-gray-900 p-6">
         <div className="mb-6">
             <h1 className="text-3xl font-bold text-cyan-800 dark:text-cyan-200">Welcome back, {session?.user.name || session?.user.username}!</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-1">Here's what's happening with your permit applications today.</p>
+            <p className="text-gray-600 dark:text-gray-400 mt-1">Here&apos;s what&apos;s happening with your permit applications today.</p>
           </div>
          
          {/* Data*/}
