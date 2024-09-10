@@ -146,7 +146,7 @@ export function Signin() {
            
             <Separator className="my-4 bg-black"/>
             <button onClick={async () => {
-             await signIn("google", { callbackUrl: 'http://localhost:3000/dashboard' });
+             await signIn("google", { callbackUrl: '/dashboard' });
             
               
             

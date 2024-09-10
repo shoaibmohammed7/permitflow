@@ -117,7 +117,11 @@ export  function Dashboard() {
                 <Button variant="ghost" className="relative h-8 w-8 rounded-full text-teal-300 text-lg ">
                   <Avatar className="h-8 w-8 text-radium">
                     {/* <AvatarImage src="/placeholder.svg" alt="User avatar" /> */}
-                    <AvatarFallback >{session?.user.username.charAt(0).toUpperCase()}</AvatarFallback>
+                    <AvatarFallback >{session?.user.username
+          ? session.user.username.charAt(0).toUpperCase()
+          : session?.user.name
+          ? session.user.name.charAt(0).toUpperCase()
+          : "?"}</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
