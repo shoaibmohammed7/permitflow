@@ -145,14 +145,23 @@ export function Signin() {
               </div>
            
             <Separator className="my-4 bg-black"/>
-            <button onClick={async () => {
-             await signIn("google", { callbackUrl: '/dashboard' });
-            
-              
-            
-        }} className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-slate-400 rounded-lg font-light text-md text-gray-900 hover:bg-gray-200 hover:border-gray-400 hover:shadow-lg focus:outline-none focus:ring-2 ">
-          <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" className="w-5 h-5 mr-2"/>
-          Login with Google</button> 
+            <button
+              onClick={async () => {
+              const result = await signIn("google", { redirect: false, callbackUrl: '/dashboard' });
+
+              if (result?.ok) {
+              // If the sign-in is successful, redirect to the dashboard
+               window.location.href = '/dashboard';
+              } else if (result?.error) {
+                // Handle errors here, maybe show a toast notification
+                  console.error('Error signing in:', result.error);
+                 }
+              }}
+                className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-slate-400 rounded-lg font-light text-md text-gray-900 hover:bg-gray-200 hover:border-gray-400 hover:shadow-lg focus:outline-none focus:ring-2">
+                <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" className="w-5 h-5 mr-2"/>
+                Login with Google
+            </button>
+
           </form>
         </div>
       </div>
