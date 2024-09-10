@@ -151,7 +151,7 @@ export function Signin() {
 
               if (result?.ok) {
               // If the sign-in is successful, redirect to the dashboard
-               window.location.href = '/dashboard';
+              router.push('/dashboard');
               } else if (result?.error) {
                 // Handle errors here, maybe show a toast notification
                   console.error('Error signing in:', result.error);
