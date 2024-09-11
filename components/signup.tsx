@@ -102,7 +102,7 @@ export function Signup() {
           style={{ marginBottom: 30 }}
         />
       </Link>
-      <div className="mx-auto flex max-w-[900px] flex-col items-center justify-center gap-8 rounded-lg bg-muted p-8 shadow-lg md:flex-row md:gap-16">
+      <div className="mx-auto flex max-w-[900px] flex-col items-center justify-center gap-8 rounded-2xl rounded-lg bg-muted p-8 shadow-lg md:flex-row md:gap-16 mb-12">
         <div className="flex flex-col items-start justify-center space-y-4 md:w-1/2">
           <div className="space-y-2">
             <div className="inline-block bg-black rounded-lg text-white px-3 py-1 text-sm">
