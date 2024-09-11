@@ -1,21 +1,30 @@
+"use client"; // This ensures the component is a Client Component
+
+import { useState } from "react";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { useRouter } from "next/navigation";
 
 export function Landingpage() {
+  // State to toggle the mobile menu
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="flex flex-col min-h-[100vh]">
       <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#1e3a8a] to-[#0f172a] px-4 lg:px-6 h-14 flex items-center justify-between z-50">
-        <Link href="/" className="flex items-center" prefetch={false}>
-          <img
-            src="https://cdn.prod.website-files.com/6388a088c0a35a9c812b566a/638ee66743bb2e5e27941a6e_logo-blue.svg"
-            alt="Logo"
-            className="h-8"
-          />
-        </Link>
+  <Link href="/" className="flex items-center" prefetch={false}>
+    <img
+      src="https://cdn.prod.website-files.com/6388a088c0a35a9c812b566a/638ee66743bb2e5e27941a6e_logo-blue.svg"
+      alt="Logo"
+      className="h-8"
+    />
+  </Link>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <nav className="hidden md:flex space-x-6">
           <Link href="/" className="text-white text-lg font-medium hover:text-gray-300 transition-colors">
             Product
@@ -28,12 +37,7 @@ export function Landingpage() {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button className="text-white text-lg font-medium">Menu</button>
-        </div>
-
-        {/* Sign In and Sign Up Buttons */}
+        {/* Sign In and Sign Up Buttons for Desktop */}
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/signin"
@@ -50,9 +54,70 @@ export function Landingpage() {
             Sign Up
           </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-white text-lg font-medium focus:outline-none"
+          >
+            {menuOpen ? "Close" : "Menu"}
+          </button>
+        </div>
       </header>
 
-      <main className="pt-16"> {/* Adjusted padding-top to avoid overlap */}
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden fixed top-14 left-0 right-0 bg-gradient-to-r from-[#1e3a8a] to-[#0f172a] px-4 py-4 z-50">
+          <nav className="flex flex-col space-y-4">
+            <Link
+              href="/"
+              className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+              onClick={toggleMenu} // Close menu on click
+            >
+              Product
+            </Link>
+            <Link
+              href="/"
+              className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+              onClick={toggleMenu} // Close menu on click
+            >
+              Solutions
+            </Link>
+            <Link
+              href="/"
+              className="text-white text-lg font-medium hover:text-gray-300 transition-colors"
+              onClick={toggleMenu} // Close menu on click
+            >
+              Resources
+            </Link>
+
+            {/* Sign In and Sign Up Links for Mobile */}
+            <div className="flex flex-col space-y-4 mt-4">
+              <Link
+                href="/signin"
+                className="inline-flex h-9 items-center justify-center rounded-md bg-transparent border border-white text-white px-4 text-sm font-medium transition-all hover:bg-white hover:text-black"
+                onClick={toggleMenu} // Close menu on click
+                prefetch={false}
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/signup"
+                className="inline-flex h-9 items-center justify-center rounded-md bg-transparent border border-white text-white px-4 text-sm font-medium transition-all hover:bg-white hover:text-black"
+                onClick={toggleMenu} // Close menu on click
+                prefetch={false}
+              >
+                Sign Up
+              </Link>
+            </div>
+          </nav>
+        </div>
+      )}
+
+  
+
+      <main className=""> 
         {/* Hero Section */}
         <section className="w-full min-h-screen flex flex-col justify-center py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-[#1e3a8a] to-[#0f172a]">
           <div className="container mx-auto px-4 md:px-6 text-center">
